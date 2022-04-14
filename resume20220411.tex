@@ -1,0 +1,92 @@
+% Sans-serif
+\renewcommand{\familydefault}{\sfdefault}
+
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvtheme[blue]{classic}
+\usepackage[UTF8]{ctex}
+\usepackage[utf8]{inputenc}
+\usepackage{eurosym}
+\usepackage{color}
+\usepackage[top=1cm, bottom=1cm, left=1.8cm, right=1.8cm]{geometry}
+\setlength{\hintscolumnwidth}{2.5cm}
+\nopagenumbers{}
+
+% Programming Languages would be blue and in italic
+\definecolor{plblue}{rgb}{0.22,0.45,0.70}
+% \definecolor{plblue}{RGB}{249, 86, 79}
+\newcommand{\pl}[1]{\textit{\color{plblue} #1}}
+
+% Identity
+\firstname{杨}
+\familyname{乐}
+\title{Graphics开发工程师}
+\address{北京}{}
+\email{18601036905@163.com}
+\homepage{maxyoung.fun}
+\mobile{+86 186 0103 6905}
+\photo[60pt][0pt]{yangle.jpg}
+% \extrainfo{\raisebox{-1mm}{\includegraphics[height=11pt]{octocatvector.eps}}
+%     \href{https://github.com/ssaunier}{github.com/ssaunier}}
+
+\begin{document}
+\maketitle
+
+% \section{Objective}
+% \cvline{2014}{Design, build and ship awesome web products with great clients using Lean \& Agile}
+
+\section{技能}
+% \cvitem[-\baselineskip]{Computer Graphics}{  
+\cvitem{Computer Graphics}{  
+  \begin{itemize}
+    \item 学习\href{https://book.douban.com/subject/26868819/}{《Fundamentals of Computer Graphics》}和\href{https://book.douban.com/subject/30296179/}{《Real Time Rendering》}, \newline
+    搭建\href{https://maxyoung.fun/computer_graphics/}{\pl{Computer Graphics Notes}}网站, 对Computer Graphics和Rendering有较好的理解.
+    \item 学习\href{https://sites.cs.ucsb.edu/~lingqi/teaching/games101.html}{GAMES101}和\href{https://sites.cs.ucsb.edu/~lingqi/teaching/games202.html}{GAMES202}课程, 有一定的渲染管线实践经验.
+    \item 熟悉\href{https://maxyoung.fun/cpp_study/}{\pl{C++}}编程.
+    \item 熟悉\pl{OpenGL}以及\pl{GLSL} shader语言.
+  \end{itemize}
+}
+\cvitem{Web应用}
+{
+  胜任Web应用的设计、前后端开发、测试、优化、部署、维护. \newline
+  在\pl{Python(Django, Flask)}, \pl{Golang(gin)}, MySQL, MongoDB, HTML, JavaScript(jQuery, React)等方面有丰富的经验.
+}
+
+\section{工作经验}
+\cventry{2017-2022}{后端开发工程师}{\href{https://dedao.cn/}{得到APP}}{北京}{}
+{
+  \begin{itemize}
+    \item 负责开发电商后台项目. 包括SKU系统、订单系统、分销系统等. \newline
+    实现了京东、天猫、有赞等多个平台来源订单的自动化流转和结算, 同时大幅提高了电商运营效率. \pl{Python(Django), Go(gin)}
+    \item 负责开发财务系统. 包括财务确收、财务结算、数据分析等. \newline
+    实现了财务办公自动化, 提高了财务工作效率. \pl{Python(Flask)}
+    \item 负责搭建异步框架Celery+RabbitMQ和Faust+Kafka, 提高了大数据量的处理能力.
+    \item 负责搭建微服务GraghQL网关, 降低了和其他团队项目的对接成本.
+    \item 推动团队TDD和契约测试, 降低了Bug数量, 提升了开发效率.
+  \end{itemize}
+}
+
+\cventry{2014-2017}{全栈开发工程师}{\href{https://kaoshixing.com/}{考试星}}{北京}{}
+{
+  负责开发考试星在线考试系统, 包括系统设计、前后端开发、部署运维、团队管理等工作. \newline
+  实现了从零开始成长到拥有一万多家企业用户. \pl{Python(Flask)}.
+}
+
+\cventry{2013-2014}{数据工程师}{\href{https://amap.com/}{高德地图.阿里巴巴}}{北京}{}
+{
+  分析地图POI和道路原始数据, 制定地图数据的质量检测流程规范, 对采集方案和质量评估提供决策支持.
+}
+
+\cventry{2006-2013}{GIS中级工程师}{\href{http://www.bhidi.com/}{北京勘测设计研究院}}{北京}{}
+{
+  参与国内外多个大型水电项目的勘测设计工作.
+}
+
+\section{教育经历}
+\cventry{2002-2006}{GIS地理信息系统学士}{\href{https://www.hhu.edu.cn/}{河海大学}}{南京}{江苏}
+{}
+
+\section{其他}
+\cvline{语言}{日语 \emph{(N2级别)}, 英语 \emph{(具备英文文献的阅读、翻译能力)}}
+\cvline{运动}{北京市业余马拉松三级运动员}
+
+\end{document}
