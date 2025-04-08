@@ -11,6 +11,22 @@
 \setlength{\hintscolumnwidth}{2.5cm}
 \nopagenumbers{}
 
+% Define a color for hyperlinks
+\definecolor{linkcolor}{rgb}{0.0, 0.4, 0.8} % Deep blue color for links
+
+% Load hyperref package
+\usepackage{hyperref}
+
+% Configure hyperref for better link visibility
+\hypersetup{
+  colorlinks=true,       % Color the text of links
+  urlcolor=linkcolor,    % Color for external URLs
+  linkcolor=linkcolor,   % Color for internal links
+  citecolor=linkcolor,   % Color for citations
+  pdfborderstyle={/S/U}, % Underline style
+  allbordercolors=linkcolor % Use the same color for all borders
+}
+
 % Programming Languages would be blue and in italic
 \definecolor{plblue}{rgb}{0.22,0.45,0.70}
 % \definecolor{plblue}{RGB}{249, 86, 79}
@@ -37,16 +53,14 @@
 \section{Skills}
 \cvitem{Web Application}
 {
-  Competent in the design, front-end and back-end development, testing, optimization, deployment, and maintenance of web applications. Rich experience in \pl{Python(Django, Flask)}, Golang(gin), MySQL, MongoDB, HTML, JavaScript(jQuery, React), etc.
+  Proficient in the frontend, backend development, testing, optimization, deployment, and maintenance of web applications. Extensive experience with \textit{Python(Flask, Django), Shell, MySQL, MongoDB, HTML, JavaScript(React)}, etc.
 }
 \cvitem{Mobile Application}{  
-  I have developed a mobile application named Readom which have been published on the Google Play Store. \pl{React Native}.
+  Developed and published a mobile application \href{https://play.google.com/apps/testing/com.maxyoung.rrrrrandomly}{Readom} on the Google Play Store. \textit{React Native}.
 }
-\cvitem{Computer Graphics}{  
-  \begin{itemize}
-    \item Good comprehension of Computer Graphics theory. \pl{Fundamentals of Computer Graphics} and \pl{Real Time Rendering}: \href{https://maxyoung.fun/computer_graphics/}{\pl{Computer Graphics Notes}}.
-    \item Some practices in \pl{OpenGL} and rendering pipeline: \href{https://github.com/max-young/opengl_study}{\pl{OpenGL Rendering}} and \href{https://github.com/max-young/hit-bricks-game}{\pl{Hit Bricks Game}}.
-  \end{itemize}
+\cvitem{DevOps}
+{
+  Proficient in the use of various DevOps tools, including Linux environment, Docker, Git, etc. Familiar with the construction and maintenance of CI/CD pipelines.
 }
 
 \section{Experience}
@@ -54,55 +68,54 @@
 \cventry{2022-now}{Software Engineer}{\href{https://rino.ai/}{Rino.ai}}{Beijing}{autonomous driving}
 {
   \begin{itemize}
-    \item \textbf{Vehicle Calibration Software} \pl{Python}, \pl{Shell}, \pl{C++}
+    \item \textbf{Vehicle Calibration Software} \textit{Python, Shell, C++, OpenCV}
         \newline
         Independently developed from scratch, \textbf{revolutionizing the process} by automating operations and reducing communication costs.
         \begin{itemize}
-            \item \textbf{Enhanced factory calibration} for hundreds new vehicles, increasing daily throughput from 2-3 to \textbf{10+ vehicles}.
+            \item \textbf{Enhanced factory calibration} for hundreds of new vehicles, increasing daily throughput from 2-3 to \textbf{10+ vehicles}.
             \item \textbf{Streamlined field calibration}, reducing on-site time from 0.5-1 day to \textbf{under 0.5 hours}.
         \end{itemize}
-    \item \textbf{OTA Version Management System} \pl{Python(Flask)}, \pl{Next.js}, \pl{RabbitMQ}
+    \item \textbf{OTA Version Management System} \textit{Python(Flask), Next.js, RabbitMQ}
         \newline
         Independently developed an OTA system, enabling efficient autonomous driving software updates.
         \begin{itemize}
             \item \textbf{Automated software/map deployment}, reducing average download time for hundreds of vehicles from hours to \textbf{under 0.5 hours} with near-zero errors.
-            \item \textbf{Developed and deployed vehicle OS}, enabling easy version switching for operations users.
             \item \textbf{Modernized vehicle/series/version management} with a user-friendly system.
         \end{itemize}
-    \item \textbf{Kanban Project Management System} \pl{Python(Flask)}, \pl{React}, \pl{Ant Design}
+    \item \textbf{Kanban Project Management System} \textit{Python(Flask), React, Ant Design}
         \newline
         Independently developed a Kanban-based project management system for autonomous driving.
         \begin{itemize}
-            \item \textbf{Improved accident management}, supporting a reduction in the accident rate from 13 to \textbf{7 per 10,000 kilometers} within six months.
+            \item \textbf{Improved accident management}, contributing to a reduction in the accident rate from 13 to \textbf{7 per 10,000 kilometers} within six months.
             \item \textbf{Facilitated efficient delivery} of dozens of new routes.
-            \item \textbf{Enhanced team collaboration} by bridging the understanding gap between R\&D and operations.
+            \item \textbf{Enhanced team collaboration} by bridging the communication gap between R\&D and operations.
         \end{itemize}
     \item \textbf{Summary of Contributions:} Independently developed these projects, overcoming technical challenges across various domains. Demonstrated leadership in product design, project coordination, and communication between technical and operational teams.
   \end{itemize}
 }
 
-\cventry{2017-2022}{Software Engineer}{\href{https://dedao.cn/}{Dedao APP}}{Beijing}{online Education}
+\cventry{2017-2022}{Software Engineer}{\href{https://dedao.cn/}{Dedao APP}}{Beijing}{Online Education}
 {
   \begin{itemize}
-    \item develop e-commerce backend projects. Including SKU system, order system, distribution system, etc. Realized the automatic circulation and settlement of orders from JD.com, Tmall, etc, and greatly improves the efficiency of e-commerce business. \pl{Python(Django), Go(gin)}
-    \item develop the financial system. Including financial recognition, financial settlement, data analysis, etc. Realized financial office automation and improved financial work efficiency. \pl{Python(Flask)}
-    \item Promotes team TDD and contract testing, reduces bugs, and improves development efficiency.
+    \item Designed and implemented comprehensive e-commerce systems including inventory management, order processing, and distribution workflows. Engineered automated order integration with major platforms (JD.com, Taobao), significantly enhancing business operations efficiency. \pl{Python(Django), Go(gin)}
+    \item Developed the financial system. Including financial recognition, financial settlement, data analysis, etc. Established financial office automation and improved financial work efficiency. \textit{Python(Flask)}
+    \item Championed Test-Driven Development (TDD) and contract testing methodologies, substantially reducing bugs and enhancing development efficiency across teams.
   \end{itemize}
 }
 
-\cventry{2014-2017}{Software Engineer}{\href{https://kaoshixing.com/}{kaoshixing}}{Beijing}{Exam SAAS Provider}
+\cventry{2014-2017}{Software Engineer}{\href{https://kaoshixing.com/}{Kaoshixing}}{Beijing}{Exam SAAS Provider}
 {
-  develope online exam system, including design, front-end and back-end development, devops, team management, etc. It has grown from scratch to more than 10,000 enterprise users. \pl{Python(Flask)}.
+  Architected and developed a comprehensive online examination platform from conception to production, handling full-stack development, DevOps implementation, and team leadership. Successfully scaled the system to serve thousands enterprise customers. \textit{Python(Flask)}.
 }
 
-\cventry{2013-2014}{Data Quality Engineer}{\href{https://en.wikipedia.org/wiki/AutoNavi}{AutoNavi.Alibaba}}{Beijing}{mapping services provider}
+\cventry{2013-2014}{Map Quality Engineer}{\href{https://en.wikipedia.org/wiki/AutoNavi}{AutoNavi.Alibaba}}{Beijing}{mapping services provider}
 {
-  Analyze map POI and road raw data, formulate quality inspection process specifications for map data, and provide decision support for collection plans and quality assessment.
+  Conducted in-depth analysis of geospatial POI and road network data, established standardized quality control protocols for map assets, and delivered strategic recommendations for data collection planning and quality metrics implementation.
 }
 
 \cventry{2006-2013}{Geomatics Engineer}{\href{http://en.bhidi.com/index.html}{Beijing Engineering Corporation Limited}}{Beijing}{hydropower engineering}
 {
-  Participated in the survey and design of many large-scale hydropower projects at china and abroad.
+  Contributed to geospatial surveying and technical design for multiple large-scale hydropower infrastructure projects, applying precision engineering methodologies in diverse geographical environments.
 }
 
 \section{Education}
@@ -111,6 +124,6 @@
 
 \section{Hobbies}
 \cvline{Languages}{English \emph{(IELTS 6.5)} Japanese \emph{(N2 Level)}}
-\cvline{Sport}{Beijing amateur marathon third-level athlete}
+\cvline{Sport}{Certified Beijing Marathon Runner (Third-Level Athletic Certification)}
 
 \end{document}
