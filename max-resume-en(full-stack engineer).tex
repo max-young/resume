@@ -1,13 +1,14 @@
 % Sans-serif
 \renewcommand{\familydefault}{\sfdefault}
 
-\documentclass[10pt,a4paper]{moderncv}
+\documentclass[11pt,a4paper]{moderncv}
 \moderncvtheme[blue]{classic}
 \usepackage[UTF8]{ctex}
 \usepackage[utf8]{inputenc}
 \usepackage{eurosym}
 \usepackage{color}
-\usepackage[top=1cm, bottom=1cm, left=1.8cm, right=1.8cm]{geometry}
+% \usepackage[top=1cm, bottom=1cm, left=1.8cm, right=1.8cm]{geometry}
+\usepackage[top=1.5cm, bottom=1.5cm, left=2cm, right=2cm]{geometry}
 \setlength{\hintscolumnwidth}{2.5cm}
 \nopagenumbers{}
 
@@ -46,6 +47,9 @@
 % \extrainfo{\raisebox{-1mm}{\includegraphics[height=11pt]{octocatvector.eps}}
 %     \href{https://github.com/ssaunier}{github.com/ssaunier}}
 
+\usepackage{enumitem}
+\setlist[itemize]{topsep=4pt, partopsep=2pt, parsep=3pt}
+
 \begin{document}
 \maketitle
 \vspace{-0.5cm}
@@ -53,19 +57,19 @@
 \section{Skills}
 \cvitem{Web Application}
 {
-  Proficient in the frontend, backend development, testing, optimization, deployment, and maintenance of web applications. Extensive experience with \textit{Python(Flask, Django), Shell, MySQL, MongoDB, HTML, JavaScript(React)}, etc.
+  Full-stack development from frontend to backend, including testing, optimization, deployment, and maintenance. Proficient in \textit{Python, React, HTML/CSS, Shell, MySQL, MongoDB, etc}. Strong product sense and user-first thinking; able to turn ideas into smooth, scalable experiences. Team player with solid agile development experience.
 }
-\cvitem{Mobile Application}{  
-  Developed and published a mobile application \href{https://play.google.com/apps/testing/com.maxyoung.rrrrrandomly}{Readom} on the Google Play Store. \textit{React Native}.
+\cvitem{Mobile App}{  
+  Published an App named \href{https://readom.maxyoung.fun/}{Readom} on Google Play. Skilled in building cross-platform apps with React Native, focusing on performance and user experience.
 }
 \cvitem{DevOps}
 {
-  Proficient in the use of various DevOps tools, including Linux environment, Docker, Git, etc. Familiar with the construction and maintenance of CI/CD pipelines.
+  Hands-on with \textit{Linux, Docker, Git}, and CI/CD pipelines. Experienced in building reliable, automated deployment workflows.
 }
 
 \section{Experience}
 
-\cventry{2022-now}{Software Engineer}{\href{https://rino.ai/}{Rino.ai}}{Beijing}{autonomous driving}
+\cventry{2022-now}{Software Engineer}{\href{https://rino.ai/}{Rino.ai}}{Beijing}{Autonomous Driving}
 {
   \begin{itemize}
     \item \textbf{Vehicle Calibration Software} \textit{Python, Shell, C++, OpenCV}
@@ -94,26 +98,34 @@
   \end{itemize}
 }
 
+\vspace{0.2cm}
+
 \cventry{2017-2022}{Software Engineer}{\href{https://dedao.cn/}{Dedao APP}}{Beijing}{Online Education}
 {
   \begin{itemize}
-    \item Designed and implemented comprehensive e-commerce systems including inventory management, order processing, and distribution workflows. Engineered automated order integration with major platforms (JD.com, Taobao), significantly enhancing business operations efficiency. \pl{Python(Django), Go(gin)}
+    \item Designed and implemented comprehensive e-commerce systems including inventory management, order processing, and distribution workflows. Engineered automated order integration with major platforms (JD.com, Taobao), significantly enhancing business operations efficiency. \textit{Python(Django), Go(gin)}
     \item Developed the financial system. Including financial recognition, financial settlement, data analysis, etc. Established financial office automation and improved financial work efficiency. \textit{Python(Flask)}
     \item Championed Test-Driven Development (TDD) and contract testing methodologies, substantially reducing bugs and enhancing development efficiency across teams.
   \end{itemize}
 }
+
+\vspace{0.2cm}
 
 \cventry{2014-2017}{Software Engineer}{\href{https://kaoshixing.com/}{Kaoshixing}}{Beijing}{Exam SAAS Provider}
 {
   Architected and developed a comprehensive online examination platform from conception to production, handling full-stack development, DevOps implementation, and team leadership. Successfully scaled the system to serve thousands enterprise customers. \textit{Python(Flask)}.
 }
 
-\cventry{2013-2014}{Map Quality Engineer}{\href{https://en.wikipedia.org/wiki/AutoNavi}{AutoNavi.Alibaba}}{Beijing}{mapping services provider}
+\vspace{0.2cm}
+
+\cventry{2013-2014}{Map Quality Engineer}{\href{https://en.wikipedia.org/wiki/AutoNavi}{AutoNavi.Alibaba}}{Beijing}{Mapping Services Provider}
 {
   Conducted in-depth analysis of geospatial POI and road network data, established standardized quality control protocols for map assets, and delivered strategic recommendations for data collection planning and quality metrics implementation.
 }
 
-\cventry{2006-2013}{Geomatics Engineer}{\href{http://en.bhidi.com/index.html}{Beijing Engineering Corporation Limited}}{Beijing}{hydropower engineering}
+\vspace{0.2cm}
+
+\cventry{2006-2013}{Geomatics Engineer}{\href{http://en.bhidi.com/index.html}{Beijing Engineering Corporation Limited}}{Beijing}{Hydropower Engineering}
 {
   Contributed to geospatial surveying and technical design for multiple large-scale hydropower infrastructure projects, applying precision engineering methodologies in diverse geographical environments.
 }
