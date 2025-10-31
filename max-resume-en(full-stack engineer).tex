@@ -52,7 +52,16 @@
 %     \href{https://github.com/ssaunier}{github.com/ssaunier}}
 
 \usepackage{enumitem}
-\setlist[itemize]{topsep=4pt, partopsep=2pt, parsep=3pt}
+\setlist[itemize]{topsep=2pt, partopsep=0pt, parsep=0pt, itemsep=2pt}
+
+% 让 \cventry 的正文可跨页：头部仍用 \cventry，正文放到可分页的缩进块里
+\usepackage{changepage}
+\newcommand{\cventrybreakable}[6]{%
+  \cventry{#1}{#2}{#3}{#4}{#5}{}%
+  \begin{adjustwidth}{\hintscolumnwidth+\separatorcolumnwidth}{0pt}
+    #6
+  \end{adjustwidth}
+}
 
 \begin{document}
 \maketitle
@@ -73,12 +82,13 @@
 
 \section{Experience}
 
-\cventry{2022-now}{Software Engineer}{\href{https://rino.ai/}{Rino.ai}}{Beijing}{Autonomous Driving}
+% 把这条改成可分页版本
+\cventrybreakable{2022-now}{Software Engineer}{\href{https://rino.ai/}{Rino.ai}}{Beijing}{Autonomous Driving}
 {
   \begin{itemize}
-    \item \textbf{OTA Version Management System} \textit{Python(Flask), Celery, RabbitMQ, Next.js}
+    \item \textbf{OTA(over the air) System} \textit{Python(Flask), Celery, RabbitMQ, Next.js}
         \newline
-        Independently developed an OTA(over the air) system enabling efficient autonomous driving software updates through an event-driven architecture.
+        Independently developed this system enabling efficient autonomous driving software updates through an event-driven architecture.
         \begin{itemize}
             \item Implemented \textbf{asynchronous task scheduling with Celery + RabbitMQ}, allowing event-based communication between modules and ensuring reliable, scalable deployment workflows.
             \item Integrated \textbf{MQTT(EMQX broker)} for \textbf{real-time progress publishing} during version download; vehicle client subscribed via \textbf{WebSocket} to display live update status.
@@ -89,7 +99,7 @@
         \newline
         Independently developed from scratch, \textbf{revolutionizing the process} by automating operations and reducing communication costs.
         \begin{itemize}
-            \item \textbf{Enhanced factory calibration} for hundreds of new vehicles, increasing daily throughput from 2-3 to \textbf{10+ vehicles}.
+            \item \textbf{Enhanced factory calibration} for hundreds of new vehicles, increasing daily throughput from 2-3 to dozens of vehicles.
             \item \textbf{Streamlined field calibration}, reducing on-site time from 0.5-1 day to \textbf{under 0.5 hours}.
         \end{itemize}
     \item \textbf{Kanban Project Management System} \textit{Python(Flask), React, Ant Design}
@@ -104,9 +114,12 @@
   \end{itemize}
 }
 
+% 移除这行强制换页
+% \clearpage
 \vspace{0.2cm}
 
-\cventry{2017-2022}{Software Engineer}{\href{https://dedao.cn/}{Dedao APP}}{Beijing}{Online Education}
+% 将这条改为可分页版本，填补上一页空白
+\cventrybreakable{2017-2022}{Software Engineer}{\href{https://dedao.cn/}{Dedao APP}}{Beijing}{Online Education}
 {
   \begin{itemize}
     \item Designed and implemented comprehensive e-commerce systems including inventory management, order processing, and distribution workflows. Engineered automated order integration with major platforms (JD.com, Taobao), significantly enhancing business operations efficiency. \textit{Python(Django), Go(gin)}
