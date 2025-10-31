@@ -3,6 +3,8 @@
 
 \documentclass[11pt,a4paper]{moderncv}
 \moderncvtheme[blue]{classic}
+% Use marvosym icon set to avoid fontawesome5 dependency (set AFTER theme)
+\moderncvicons{marvosym}
 \usepackage[UTF8]{ctex}
 \usepackage[utf8]{inputenc}
 \usepackage{eurosym}
@@ -42,7 +44,9 @@
 \email{alvysurvey@gmail.com}
 \mobile{+86 186 0103 6905}
 \photo[60pt][0pt]{yangle.jpg}
-\social[linkedin][www.linkedin.com/in/max-young-16b690143/]{Max Young}
+% Avoid LinkedIn icon (requires fontawesome5). Show link as extra info instead.
+% \social[linkedin][www.linkedin.com/in/max-young-16b690143/]{Max Young}
+\extrainfo{\href{https://www.linkedin.com/in/max-young-16b690143/}{LinkedIn: Max Young}}
 % \homepage{maxyoung.fun}
 % \extrainfo{\raisebox{-1mm}{\includegraphics[height=11pt]{octocatvector.eps}}
 %     \href{https://github.com/ssaunier}{github.com/ssaunier}}
@@ -72,19 +76,21 @@
 \cventry{2022-now}{Software Engineer}{\href{https://rino.ai/}{Rino.ai}}{Beijing}{Autonomous Driving}
 {
   \begin{itemize}
+    \item \textbf{OTA Version Management System} \textit{Python(Flask), Celery, RabbitMQ, Next.js}
+        \newline
+        Independently developed an OTA(over the air) system enabling efficient autonomous driving software updates through an event-driven architecture.
+        \begin{itemize}
+            \item Implemented \textbf{asynchronous task scheduling with Celery + RabbitMQ}, allowing event-based communication between modules and ensuring reliable, scalable deployment workflows.
+            \item Integrated \textbf{MQTT(EMQX broker)} for \textbf{real-time progress publishing} during version download; vehicle client subscribed via \textbf{WebSocket} to display live update status.
+            \item \textbf{Automated software/map distribution} for thousands of vehicles, reducing average download time from hours to under 0.5 hours with near-zero errors.
+            \item Modernized vehicle/series/version management with a user-friendly interface and robust backend architecture.
+        \end{itemize}
     \item \textbf{Vehicle Calibration Software} \textit{Python, Shell, C++, OpenCV}
         \newline
         Independently developed from scratch, \textbf{revolutionizing the process} by automating operations and reducing communication costs.
         \begin{itemize}
             \item \textbf{Enhanced factory calibration} for hundreds of new vehicles, increasing daily throughput from 2-3 to \textbf{10+ vehicles}.
             \item \textbf{Streamlined field calibration}, reducing on-site time from 0.5-1 day to \textbf{under 0.5 hours}.
-        \end{itemize}
-    \item \textbf{OTA Version Management System} \textit{Python(Flask), Next.js, RabbitMQ}
-        \newline
-        Independently developed an OTA system, enabling efficient autonomous driving software updates.
-        \begin{itemize}
-            \item \textbf{Automated software/map deployment}, reducing average download time for hundreds of vehicles from hours to \textbf{under 0.5 hours} with near-zero errors.
-            \item \textbf{Modernized vehicle/series/version management} with a user-friendly system.
         \end{itemize}
     \item \textbf{Kanban Project Management System} \textit{Python(Flask), React, Ant Design}
         \newline
