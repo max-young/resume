@@ -1,0 +1,40 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Export current TEX to DOCX (pandoc)",
+			"type": "shell",
+			"command": "bash",
+			"args": [
+				"-lc",
+				"if ! command -v pandoc >/dev/null 2>&1; then echo \"Error: pandoc is not installed. Install with: sudo apt-get install -y pandoc\" && exit 1; fi; pandoc \"${relativeFile}\" -o \"${workspaceFolder}/${fileBasenameNoExtension}.docx\" --from=latex --to=docx --lua-filter=filters/moderncv-to-docx.lua --resource-path=\"${fileDirname}:${workspaceFolder}\""
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "Export current TEX to DOCX (PDF route)",
+			"type": "shell",
+			"command": "bash",
+			"args": [
+				"-lc",
+				"set -e; if [ \"${fileExtname}\" != \".tex\" ]; then echo \"Error: Open a .tex file before running this task.\"; exit 1; fi; if ! command -v xelatex >/dev/null 2>&1; then echo \"Error: xelatex not found. Install TeX Live: sudo apt-get install -y texlive-xetex texlive-latex-extra texlive-lang-chinese fonts-noto-cjk\"; exit 1; fi; OUT_PDF=\"${workspaceFolder}/${fileBasenameNoExtension}.pdf\"; (cd \"${fileDirname}\" && xelatex -interaction=nonstopmode -halt-on-error \"${fileBasename}\" >/dev/null); (cd \"${fileDirname}\" && xelatex -interaction=nonstopmode -halt-on-error \"${fileBasename}\" >/dev/null); if [ ! -f \"${fileDirname}/${fileBasenameNoExtension}.pdf\" ] && [ ! -f \"$OUT_PDF\" ]; then echo \"Error: PDF was not generated.\"; exit 1; fi; SRC_PDF=\"${fileDirname}/${fileBasenameNoExtension}.pdf\"; if [ ! -f \"$SRC_PDF\" ]; then SRC_PDF=\"$OUT_PDF\"; fi; if ! command -v python3 >/dev/null 2>&1; then echo \"Error: python3 is required.\"; exit 1; fi; python3 -c \"import pkgutil,sys; sys.exit(0 if pkgutil.find_loader('pdf2docx') else 1)\" >/dev/null 2>&1 || ( echo \"Installing pdf2docx locally...\" && python3 -m pip install --user pdf2docx >/dev/null ); python3 -m pdf2docx.convert \"$SRC_PDF\" \"${workspaceFolder}/${fileBasenameNoExtension}.docx\" >/dev/null; echo \"DOCX exported: ${workspaceFolder}/${fileBasenameNoExtension}.docx\""
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": []
+		},
+		
+	]
+}
