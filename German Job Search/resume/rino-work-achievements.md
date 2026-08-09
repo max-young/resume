@@ -1,121 +1,125 @@
-# Rino.ai Work Achievements (2022–Present)
+Based on the work you’ve described across this project and the team-direction document, your achievements can be summarised around one major transition: **you moved from solving individual engineering problems to building infrastructure and platforms that enable autonomous-driving fleets to operate at scale.** Your team’s scope now centres on software, maps, configuration and calibration delivery, with an emphasis on unified management, safe delivery and large-scale fleet operations. 
 
-This document is the fact base for the German-market CV. It consolidates the
-Rino.ai details already present in the locally generated CV and the positioning
-in `German Job Search/german_plan.md`.
+### 1. Dramatically improved software delivery efficiency
 
-> Verification note: the supplied ChatGPT Project URL requires an authenticated
-> ChatGPT session and could not be read from the current Codex environment.
-> Confirm the exact fleet sizes, timing figures, incident definition and role
-> title against the project before external use.
+One of your clearest measurable achievements is improving **SOTA/software deployment time from roughly 30 minutes to around 10 minutes on average — about a 67% reduction**.
 
-## Career positioning
+This was not merely a speed optimisation. It reduced vehicle preparation time, shortened iteration cycles for development and testing, and increased the number of vehicles that could be updated within the same operational window.
 
-**Senior Software Engineer — Autonomous Driving Operations, OTA & Fleet Platforms**
+At the same time, you increased the system’s maximum deployment capacity from approximately **200 vehicles to 5,000 vehicles**, a **25× increase in scale**.
 
-- 13+ years building production software and data systems, including 4+ years
-  in autonomous driving.
-- End-to-end ownership: field problem discovery, product/workflow design,
-  architecture, full-stack implementation, deployment and operational support.
-- Connects R&D, factory and fleet-operations teams rather than working on an
-  isolated application layer.
-- Strongest stack: Python, React/Next.js and Linux/DevOps; practical C++ and
-  OpenCV in vehicle environments.
+Together, these two numbers tell a strong story:
 
-## 1. Fleet OTA and release platform
+> **Faster deployment, while simultaneously moving from hundreds to thousands of vehicles.**
 
-### Situation and scope
+### 2. Designed and built a fleet-scale FOTA platform
 
-- Software and map distribution for thousands of autonomous vehicles.
-- Map/software artifacts can reach hundreds of gigabytes.
-- Vehicles operate over unreliable networks, making progress visibility,
-  version consistency and failure recovery core requirements.
+You drove the design and implementation of a **FOTA system for autonomous vehicles**, progressing it through multiple milestones and completing the M3/MVP stage for deployment.
 
-### Ownership and implementation
+The work went beyond a conventional OTA downloader. You considered the complete vehicle-side upgrade lifecycle, including distributed execution across TBOX/ADCU nodes, upgrade orchestration, failure recovery, power-loss safety, client architecture, server deployment and web-based management.
 
-- Built an event-driven control plane with Flask, Celery and RabbitMQ and a
-  Next.js operations frontend.
-- Used MQTT/EMQX and WebSocket-based progress reporting to connect vehicle-side
-  execution with the operations workflow.
-- Implemented vehicle, series and version management, version-consistency
-  controls and failure-handling workflows.
+This represents a shift from maintaining scripts and individual deployment mechanisms towards establishing a **standardised software lifecycle-management platform**.
 
-### Result
+### 3. Built a foundation for unified vehicle software and data delivery
 
-- Automated large-scale software and map deployment.
-- Reduced average download time from hours to under 30 minutes.
-- Made very large deployments operable under unreliable field-network
-  conditions.
+Your work gradually brought several previously separate engineering problems under one architecture:
 
-## 2. Vehicle calibration platform
+* software/version deployment;
+* high-definition/local-map distribution;
+* vehicle configuration delivery;
+* calibration-file management;
+* vehicle-side execution and verification;
+* service-health monitoring;
+* interrupted transfer and recovery;
+* version/state consistency.
 
-### Situation and scope
+This corresponds closely to the product direction you have identified: a unified delivery and operations platform for **software, maps, configuration and calibration across autonomous-driving fleets**. 
 
-- Factory and field calibration was a throughput bottleneck.
-- The workflow has been used on hundreds of vehicles.
+That is important because the achievement is not simply “implemented several tools”. You are building the **delivery infrastructure between cloud-side engineering systems and thousands of physical vehicles**.
 
-### Ownership and implementation
+### 4. Improved large-map distribution architecture
 
-- Built an end-to-end workflow using Python, Shell, C++ and OpenCV.
-- Converted field knowledge and manual steps into a repeatable platform used by
-  factory and fleet teams.
+You worked extensively on one of the harder practical problems in autonomous-driving infrastructure: distributing very large map datasets to vehicles with limited disk space and unreliable network conditions.
 
-### Result
+You investigated and challenged several approaches, including:
 
-- Increased factory throughput from 2–3 to 10+ vehicles per day.
-- Reduced field calibration time from 0.5–1 day to under 30 minutes.
+* full-copy + incremental `rsync`;
+* rsync-based diff distribution;
+* OverlayFS-based old/new-map switching;
+* incremental updates;
+* interrupted-transfer recovery;
+* storage-space optimisation;
+* deployment progress and ETA accuracy.
 
-## 3. Fleet operations platform
+More importantly, you were not merely implementing proposals handed to you. You evaluated their architectural consequences — disk consumption, atomicity, rollback capability, consistency, failure modes and operational complexity — and pushed towards a safer long-term solution.
 
-### Situation and scope
+### 5. Improved reliability and observability of vehicle deployment
 
-- R&D and operations needed shared, standardised workflows for incidents and
-  route delivery.
+You worked on making large-scale vehicle operations **observable rather than opaque**.
 
-### Ownership and implementation
+Examples include investigating accurate `rsync --info=progress2` progress calculation, interrupted-transfer behaviour, remaining-time inaccuracies and transfer-state semantics, as well as exploring lightweight monitoring of vehicle-hosted web services across several thousand vehicles.
 
-- Built the system with Flask, React and Ant Design.
-- Productised cross-team workflows for incident management and new-route
-  delivery.
+This moves fleet operations towards the characteristics identified in your product positioning: **verifiable, recoverable and traceable delivery**, rather than merely “sending files successfully”. 
 
-### Result
+### 6. Standardised vehicle configuration and calibration management
 
-- Helped reduce the operational incident rate from 13 to 7 per 10,000 km within
-  six months.
-- Supported delivery of dozens of new routes.
+You improved the engineering model around vehicle-specific and vehicle-series configuration, particularly camera/lidar intrinsic and extrinsic calibration files.
 
-## 4. Linux fleet reliability and maintenance
+Your work included deciding how fixed model-level calibration data should be represented, automating retrieval and generation, integrating calibration repositories, and reducing manual handling.
 
-- Automated fleet maintenance with rsync and systemd timers.
-- Added disk-protection measures and remote-access tooling.
-- Improved the reliability and maintainability of large-scale vehicle software
-  operations.
+This contributes to a broader result: vehicles receive not just the correct software version, but the **correct combination of software, maps, configuration and calibration data**.
 
-## Resume-ready achievement bullets
+### 7. Improved internal engineering infrastructure
 
-- Built an event-driven OTA and release platform that automated software and map
-  distribution to thousands of autonomous vehicles, reducing average download
-  time from hours to under 30 minutes.
-- Engineered deployments of software and map artifacts up to hundreds of
-  gigabytes over unreliable networks, with live progress reporting, version
-  controls and failure-handling workflows.
-- Created a vehicle calibration platform used on hundreds of vehicles,
-  increasing factory throughput from 2–3 to 10+ vehicles per day and reducing
-  field calibration from 0.5–1 day to under 30 minutes.
-- Delivered a shared incident and route-delivery platform for R&D and operations,
-  helping reduce the operational incident rate from 13 to 7 per 10,000 km in six
-  months and supporting dozens of new routes.
-- Automated Linux fleet maintenance and disk protection using rsync and systemd,
-  improving the reliability of vehicle software operations at scale.
+You also worked on infrastructure that improves the team’s development efficiency, including:
 
-## Facts to confirm before applying
+* evaluating an internal Python package distribution mechanism;
+* investigating GitLab PyPI Registry;
+* improving deployment automation;
+* comparing systemd timers with cron;
+* managing long-running `rsync` processes;
+* investigating distributed FRP architecture for bandwidth scaling;
+* planning cloud deployment of backend and web services.
 
-- Official English job title at Rino.ai.
-- Whether “thousands of vehicles” describes deployed, managed or supported
-  vehicles.
-- Whether “under 30 minutes” refers to transfer, installation or the complete
-  deployment workflow.
-- Whether “operational incident rate” or “accident rate” is the internally
-  correct definition for the 13-to-7 metric.
-- Whether public disclosure of EMQX, fleet scale, artifact size and the numeric
-  results is permitted.
+These initiatives reduce duplicated engineering work and make internal capabilities reusable instead of project-specific.
+
+### 8. Started productising what was previously engineering tooling
+
+A particularly significant change is that your work has increasingly become **product-oriented rather than tool-oriented**.
+
+You have been defining and designing a vehicle-management platform, including web UI, product identity, icons, information architecture and a formal product positioning.
+
+The emerging positioning is:
+
+> **A unified delivery and operations-management platform for software, maps, configuration and calibration for autonomous-driving fleets.** 
+
+You have also begun treating documentation as a product capability rather than distributing manually maintained PDFs, exploring a maintainable user-documentation system for multiple products.
+
+### 9. Began transitioning from individual contributor to technical/product leader
+
+Your organisational contribution has also changed.
+
+As the team expanded to three people, you began transferring routine development and issue-resolution work to other engineers and shifting your attention towards:
+
+* technical direction;
+* architecture;
+* project prioritisation;
+* product definition;
+* team responsibilities;
+* long-term platform strategy.
+
+This is an important achievement in itself: **your leverage is starting to come from systems and people, rather than the number of problems you personally fix.**
+
+---
+
+## Condensed performance-review version
+
+A concise summary suitable for a promotion or annual review would be:
+
+> Over the past period, I have focused on transforming autonomous-vehicle software delivery from individual engineering tools into a scalable fleet-management platform. I reduced average SOTA deployment time from approximately **30 minutes to 10 minutes** while increasing maximum deployment capacity from **200 to 5,000 vehicles**. I led the design and implementation of our FOTA platform, improved large-scale map distribution and recovery mechanisms, and standardised the management and delivery of vehicle software, maps, configurations and calibration data.
+>
+> In parallel, I improved deployment observability, reliability and internal engineering infrastructure, and helped establish the product direction for a unified autonomous-driving fleet delivery and operations platform. As the team expanded, my role also evolved from primarily hands-on development and issue resolution towards **architecture, product planning, technical decision-making and team leadership**.
+
+The strongest promotion narrative is therefore not **“I completed many projects.”** It is:
+
+**“I built the infrastructure that allowed the organisation to move from managing hundreds of vehicles manually to operating thousands of vehicles systematically, and I am now turning that infrastructure into a reusable product and team capability.”**
