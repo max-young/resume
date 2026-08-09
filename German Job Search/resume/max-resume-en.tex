@@ -1,0 +1,88 @@
+% !TEX program = xelatex
+\documentclass[10pt,a4paper,sans]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+\moderncvicons{marvosym}
+
+\usepackage[UTF8]{ctex}
+\usepackage[top=1.25cm,bottom=1.25cm,left=1.7cm,right=1.7cm]{geometry}
+\usepackage{enumitem}
+
+\setlength{\hintscolumnwidth}{2.35cm}
+\setlist[itemize]{label=\textbullet,leftmargin=*,topsep=1pt,partopsep=0pt,parsep=0pt,itemsep=1.5pt}
+\nopagenumbers{}
+
+\definecolor{linkcolor}{RGB}{0,92,153}
+\AtBeginDocument{\hypersetup{
+  urlcolor=linkcolor,
+  linkcolor=linkcolor,
+  pdfauthor={Max Young (Le Yang)},
+  pdftitle={Senior Software Engineer - Autonomous Driving Operations, OTA and Fleet Platforms}
+}}
+
+% Identity
+\firstname{Max}
+\familyname{Young \normalfont{{\fontsize{11}{13}\selectfont (Le Yang)}}}
+\title{Senior Software Engineer | Autonomous Driving Operations, OTA \& Fleet Platforms}
+\address{Beijing, China}{}{}
+\email{alvysurvey@gmail.com}
+\mobile{+86 186 0103 6905}
+\photo[58pt][0pt]{../../yangle.jpg}
+\extrainfo{%
+  \href{https://maxyoung.fun}{Portfolio: maxyoung.fun}\quad
+  \href{https://www.linkedin.com/in/max-young-16b690143/}{LinkedIn: Max Young}%
+}
+
+\begin{document}
+\makecvtitle
+\vspace{-0.9cm}
+
+\section{Profile}
+\cvitem{}{Senior software engineer with 13+ years of experience building production software and data systems, including 4+ years in autonomous driving. Owns vehicle platforms end to end---from field problem discovery and workflow design through architecture, implementation, deployment and operational support. Delivered fleet OTA, vehicle calibration and operations systems at scale. Strong in Python, React and Linux, with practical C++ experience in vehicle environments. Open to relocation across Germany.}
+
+\section{Technical Skills}
+\cvitem{Domain}{Autonomous-driving operations, fleet and vehicle platforms, OTA/software updates, map distribution, vehicle calibration, telemetry and incident workflows}
+\cvitem{Backend \& Data}{Python (Flask, Django), REST APIs, Celery, RabbitMQ, Kafka/Faust, MQTT/EMQX, MySQL, MongoDB}
+\cvitem{Frontend}{React, Next.js, Ant Design, HTML/CSS; end-to-end product and workflow design}
+\cvitem{Systems}{Linux, Shell, Docker, Git, CI/CD, systemd, rsync; deployment, monitoring, failure handling and operational support}
+\cvitem{Additional}{Go (Gin), practical C++ and OpenCV, TDD, contract testing, agile delivery}
+
+\section{Professional Experience}
+\cventry{2022--Present}{Software Engineer}{\href{https://rino.ai/}{Rino.ai}}{Beijing, China}{Autonomous Driving}{%
+  \begin{itemize}
+    \item Owned product discovery, architecture and full-stack delivery of internal vehicle platforms used by R\&D, factory and fleet-operations teams.
+    \item \textbf{Fleet OTA \& Release Platform:} Built an event-driven control plane with Flask, Celery and RabbitMQ and a Next.js frontend; automated software and map distribution to thousands of vehicles and reduced average download time from hours to under 30 minutes.
+    \item Engineered deployments of map and software packages up to hundreds of gigabytes over unreliable networks using MQTT/EMQX and WebSocket progress reporting, vehicle/series/version management, version-consistency controls and failure-handling workflows.
+    \item \textbf{Vehicle Calibration Platform:} Created an end-to-end Python, Shell, C++ and OpenCV workflow used on hundreds of vehicles; increased factory throughput from 2--3 to 10+ vehicles per day and cut field calibration from 0.5--1 day to under 30 minutes.
+    \item \textbf{Fleet Operations Platform:} Built a Flask/React/Ant Design system that standardised incident management and route delivery across R\&D and operations; helped reduce the operational incident rate from 13 to 7 per 10,000 km within six months and supported delivery of dozens of new routes.
+    \item Automated Linux-based fleet maintenance with rsync, systemd timers, disk-protection measures and remote-access tooling, improving the reliability of large-scale vehicle software operations.
+  \end{itemize}}
+
+\newpage
+
+\section{Professional Experience (continued)}
+\cventry{2017--2022}{Software Engineer}{\href{https://dedao.cn/}{Dedao}}{Beijing, China}{Online Education \& E-commerce}{%
+  \begin{itemize}
+    \item Designed backend systems for inventory, orders and distribution; automated order ingestion and settlement across JD.com, Taobao and Youzan using Python/Django and Go/Gin.
+    \item Built financial recognition, settlement and analytics services in Flask, replacing manual office workflows and improving finance-team efficiency.
+    \item Introduced Celery/RabbitMQ and Faust/Kafka for asynchronous processing, built a GraphQL gateway for service integration, and championed TDD and contract testing to reduce defects and integration cost.
+  \end{itemize}}
+
+\cventry{2014--2017}{Software Engineer}{\href{https://kaoshixing.com/}{Kaoshixing}}{Beijing, China}{B2B SaaS}{%
+  Led architecture, full-stack development, DevOps and engineering coordination for an online examination platform, taking it from initial build to production scale serving 10,000+ enterprise customers. \textit{Python, Flask, JavaScript, Linux}}
+
+\cventry{2013--2014}{Map Quality Engineer}{\href{https://www.amap.com/}{AutoNavi (Alibaba Group)}}{Beijing, China}{Mapping Services}{%
+  Analysed geospatial POI and road-network data, established map-asset quality-control standards, and advised data-collection planning and quality measurement.}
+
+\cventry{2006--2013}{Geomatics Engineer}{\href{http://en.bhidi.com/}{Beijing Engineering Corporation}}{Beijing, China}{Hydropower Engineering}{%
+  Delivered geospatial surveying and technical design for large-scale hydropower infrastructure projects in China and overseas.}
+
+\section{Education}
+\cventry{2002--2006}{Bachelor's Degree in Geomatics Engineering}{\href{https://en.hhu.edu.cn/}{Hohai University}}{Nanjing, China}{}{}
+
+\section{Languages \& Additional Information}
+\cvitem{Languages}{English (IELTS Academic 6.5); Japanese (JLPT N2); Mandarin Chinese (native)}
+\cvitem{Mobility}{Open to relocation across Germany and to working in international teams}
+\cvitem{Interests}{Distance running; certified third-level amateur marathon athlete in Beijing}
+
+\end{document}
