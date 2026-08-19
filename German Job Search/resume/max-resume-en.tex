@@ -3,6 +3,7 @@
 \moderncvstyle{classic}
 \moderncvcolor{blue}
 \moderncvicons{marvosym}
+\renewcommand*{\titlefont}{\large\mdseries\slshape}
 
 \usepackage[UTF8]{ctex}
 \usepackage[top=1.25cm,bottom=1.25cm,left=1.7cm,right=1.7cm]{geometry}
@@ -25,7 +26,7 @@
 % Identity
 \firstname{Max}
 \familyname{Young \normalfont{{\fontsize{11}{13}\selectfont (Le Yang)}}}
-\title{Senior Software Engineer | Autonomous Driving SOTA/FOTA \& Fleet Platforms}
+\title{Senior Software Engineer | Vehicle Platforms · SOTA/FOTA · Fleet Operations}
 \address{Beijing, China}{}{}
 \email{alvysurvey@gmail.com}
 \mobile{+86 186 0103 6905}
@@ -40,21 +41,19 @@
 \vspace{-0.9cm}
 
 \section{Profile}
-\cvitem{}{Senior software engineer with 13+ years of experience building production systems, including 4+ years in autonomous driving. Leads vehicle-platform work from product definition and architecture through implementation and fleet operations. Reduced average SOTA deployment time by 67\% while expanding capacity 25$\times$ from 200 to 5,000 vehicles, and led an autonomous-vehicle FOTA platform to M3/MVP. Strong in Python, React and Linux, with practical C++ experience; open to relocation across Germany.}
+\cvitem{}{Senior Software Engineer with 13+ years of experience building production systems, including 4+ years in autonomous driving. Specialised in vehicle platforms, SOTA/FOTA systems, calibration tooling, and fleet operations software, with end-to-end ownership from product definition and architecture to implementation and production deployment. Strong in Python, Linux, and backend/platform engineering, with additional experience in React, Go, and C++.}
+
 
 \section{Professional Experience}
 \cventry{2022--Present}{Software Engineer}{\href{https://rino.ai/}{Rino.ai}}{Beijing, China}{Autonomous Driving}{%
   \begin{itemize}
-    \item Led architecture, product definition and technical direction for a three-person vehicle-platform team, turning separate engineering tools into reusable delivery infrastructure for R\&D, factory and fleet operations.
-    \item \textbf{SOTA Platform:} Reduced average software deployment time from approximately 30 to 10 minutes (67\%) while increasing maximum capacity from 200 to 5,000 vehicles (25$\times$).
-    \item \textbf{FOTA Platform:} Led design and implementation through M3/MVP, covering distributed execution across TBOX/ADCU nodes, upgrade orchestration, failure recovery, power-loss safety, vehicle clients, backend deployment and web-based management.
-    \item Unified delivery workflows for software, maps, vehicle configuration and calibration, including vehicle/series targeting, execution verification, service-health monitoring, interrupted-transfer recovery and version/state consistency.
-    \item \textbf{Large-map Distribution:} Led architecture trade-offs for hundreds-of-gigabytes datasets under limited disk space and unreliable networks, evaluating rsync, incremental delivery and OverlayFS for storage efficiency, atomic switching, rollback, progress and ETA accuracy.
-    \item \textbf{Reliability \& Observability:} Improved fleet-update transparency by analysing rsync transfer-state semantics, interrupted-transfer behaviour and ETA accuracy, and by exploring lightweight health monitoring for vehicle-hosted services across several thousand vehicles.
-    \item \textbf{Vehicle Calibration Platform:} Created an end-to-end Python, Shell, C++ and OpenCV workflow used on hundreds of vehicles; increased factory throughput from 2--3 to 10+ vehicles per day and cut field calibration from 0.5--1 day to under 30 minutes.
-    \item \textbf{Fleet Operations Platform:} Built a Flask/React/Ant Design system that standardised incident management and route delivery across R\&D and operations; helped reduce the operational incident rate from 13 to 7 per 10,000 km within six months and supported delivery of dozens of new routes.
-    \item \textbf{Engineering Infrastructure:} Evaluated GitLab's PyPI Registry for reusable internal Python packages and improved deployment automation using systemd timers, controlled long-running rsync processes, distributed FRP and cloud-hosted backend/web services.
-    \item \textbf{Productisation:} Defined the product positioning, web information architecture and maintainable documentation approach for a unified vehicle-management platform, turning project-specific tooling into reusable team and product capabilities.
+    \item Owned architecture, product definition, and technical direction for a three-person vehicle-platform team, turning separate engineering tools into reusable delivery infrastructure for R\&D, factory, and fleet operations.
+    \item \textbf{SOTA Platform:} Reduced average software deployment time from approximately 30 to 10 minutes while scaling deployment capacity from 200 to 5,000 vehicles.
+    \item \textbf{FOTA Platform:} Architected and implemented an MVP for distributed vehicle upgrades across TBOX/ADCU nodes, covering orchestration, failure recovery, power-loss safety, vehicle clients, backend services, and web-based management.
+    \item \textbf{Vehicle Calibration Platform:} Built an end-to-end calibration workflow using Python, Shell, C++, and OpenCV, increasing factory throughput from 2--3 to 30+ vehicles per day and reducing field calibration time from 0.5--1 day to under 3 minutes.
+    \item \textbf{Fleet Operations Platform:} Built a Flask/React platform for incident management and route delivery across R\&D and operations, contributing to a reduction in incident rate from 13 to 7 per 10,000 km within six months.
+    \item \textbf{Large-Map Distribution:} Designed delivery strategies for hundreds-of-gigabytes map datasets under limited storage and unreliable networks, improving transfer efficiency, resilience, rollback safety, and deployment visibility.
+    \item \textbf{Platform Reliability \& Infrastructure:} Improved deployment reliability and operational visibility across thousands of vehicles through resumable transfers, service-health monitoring, deployment automation, version/state consistency, and reusable internal tooling.
   \end{itemize}}
 
 \newpage
@@ -65,7 +64,7 @@
   \begin{itemize}
     \item Designed backend systems for inventory, orders and distribution; automated order ingestion and settlement across JD.com, Taobao and Youzan using Python/Django and Go/Gin.
     \item Built financial recognition, settlement and analytics services in Flask, replacing manual office workflows and improving finance-team efficiency.
-    \item Introduced Celery/RabbitMQ and Faust/Kafka for asynchronous processing, built a GraphQL gateway for service integration, and championed TDD and contract testing to reduce defects and integration cost.
+    \item Improved service scalability and integration using Celery/RabbitMQ, Kafka/Faust, and GraphQL, while introducing TDD and contract testing to reduce defects and integration cost.
   \end{itemize}}
 
 \par\vspace{0.32cm}
@@ -84,11 +83,11 @@
   Delivered geospatial surveying and technical design for large-scale hydropower infrastructure projects in China and overseas.}
 
 \section{Technical Skills}
-\cvitem{Domain}{Autonomous-driving operations, SOTA/FOTA lifecycle and release orchestration, fleet platforms, software/map/configuration/calibration delivery, observability and recovery}
-\cvitem{Backend \& Data}{Python (Flask, Django), REST APIs, Celery, RabbitMQ, Kafka/Faust, MQTT/EMQX, MySQL, MongoDB}
-\cvitem{Frontend}{React, Next.js, Ant Design, HTML/CSS; end-to-end product and workflow design}
-\cvitem{Systems}{Linux, Shell, Docker, Git, CI/CD, systemd, rsync, OverlayFS, FRP; deployment, monitoring, failure handling and operational support}
-\cvitem{Additional}{Go (Gin), practical C++ and OpenCV, TDD, contract testing, agile delivery}
+\cvitem{Domain}{Vehicle platforms, SOTA/FOTA, fleet operations, software/map/configuration delivery, calibration tooling, deployment reliability}
+\cvitem{Backend \& Distributed Systems}{Python, Flask, Django, REST APIs, RabbitMQ, Kafka, MQTT, MySQL, MongoDB}
+\cvitem{Systems \& Infrastructure}{Linux, Shell, Docker, Git, CI/CD, systemd, rsync, deployment automation, monitoring, failure recovery}
+\cvitem{Frontend}{React, Next.js, Ant Design}
+\cvitem{Additional}{Go, practical C++, OpenCV, TDD, contract testing}
 
 \section{Education}
 \vspace{0.08cm}
@@ -98,7 +97,7 @@
 
 \section{Languages \& Additional Information}
 \cvitem{Languages}{English (IELTS Academic 6.5); Japanese (JLPT N2); Mandarin Chinese (native)}
-\cvitem{Mobility}{Open to relocation across Germany and to working in international teams}
+\cvitem{Mobility}{Open to relocation abroad and to working in international teams}
 \cvitem{Interests}{Distance running; certified third-level amateur marathon athlete in Beijing}
 
 \end{document}
