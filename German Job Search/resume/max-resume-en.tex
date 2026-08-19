@@ -1,5 +1,5 @@
 % !TEX program = xelatex
-\documentclass[11pt,a4paper,sans]{moderncv}
+\documentclass[12pt,a4paper,sans]{moderncv}
 \moderncvstyle{classic}
 \moderncvcolor{blue}
 \moderncvicons{marvosym}
@@ -11,8 +11,8 @@
 \usepackage{setspace}
 
 \setlength{\hintscolumnwidth}{2.35cm}
-\setstretch{1.12}
-\setlist[itemize]{label=\textbullet,leftmargin=*,topsep=2pt,partopsep=0pt,parsep=0pt,itemsep=3.5pt}
+\setstretch{1.16}
+\setlist[itemize]{before=\normalsize,label=\textbullet,leftmargin=*,topsep=2pt,partopsep=0pt,parsep=0pt,itemsep=5.5pt}
 \nopagenumbers{}
 
 \definecolor{linkcolor}{RGB}{0,92,153}
@@ -62,7 +62,7 @@
 
 \cventry{2017--2022}{Software Engineer}{\href{https://dedao.cn/}{Dedao}}{Beijing, China}{Online Education \& E-commerce}{%
   \begin{itemize}
-    \item Designed backend systems for inventory, orders and distribution; automated order ingestion and settlement across JD.com, Taobao and Youzan using Python/Django and Go/Gin.
+    \item Designed backend systems for inventory, orders and distribution; automated order ingestion and settlement across JD.com, Alibaba using Python/Django and Go/Gin.
     \item Built financial recognition, settlement and analytics services in Flask, replacing manual office workflows and improving finance-team efficiency.
     \item Improved service scalability and integration using Celery/RabbitMQ, Kafka/Faust, and GraphQL, while introducing TDD and contract testing to reduce defects and integration cost.
   \end{itemize}}
@@ -84,7 +84,7 @@
 
 \section{Technical Skills}
 \cvitem{Domain}{Vehicle platforms, SOTA/FOTA, fleet operations, software/map/configuration delivery, calibration tooling, deployment reliability}
-\cvitem{Backend \& Distributed Systems}{Python, Flask, Django, REST APIs, RabbitMQ, Kafka, MQTT, MySQL, MongoDB}
+\cvitem{Backend \& Distributed Systems}{Python, Flask, Django, REST APIs, RabbitMQ, MQTT, MySQL, MongoDB}
 \cvitem{Systems \& Infrastructure}{Linux, Shell, Docker, Git, CI/CD, systemd, rsync, deployment automation, monitoring, failure recovery}
 \cvitem{Frontend}{React, Next.js, Ant Design}
 \cvitem{Additional}{Go, practical C++, OpenCV, TDD, contract testing}
